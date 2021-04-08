@@ -203,7 +203,7 @@ endlegend
 !endfunction
 
 !unquoted procedure Person($alias, $label, $descr="", $sprite="", $tags="")
-rectangle "$getPerson($label, $descr, $sprite)$getProps()" $toStereos("person", $tags) as $alias
+rectangle "$getPerson($label, $descr, $sprite)$getProps()" $toStereos("пользователь", $tags) as $alias
 !endprocedure
 
 !unquoted procedure Person_Ext($alias, $label, $descr="", $sprite="", $tags="")
