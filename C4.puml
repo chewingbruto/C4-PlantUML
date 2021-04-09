@@ -77,7 +77,7 @@ skinparam rectangle<<boundary>> {
   !if (%strlen($tags) == 0)
     !$stereos = '<<' + $elementType + '>>'
 %set_variable_value("$" + $elementType + "Legend", %true())
-    !return $stereos
+    !return '<<' + $elementType + '>>'
   !endif 
   !$stereos = ''
   !$brPos = %strpos($tags, "+")

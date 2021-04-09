@@ -2,7 +2,7 @@
 !if %variable_exists("RELATIVE_INCLUDE")
   !include %get_variable_value("RELATIVE_INCLUDE")/C4_Context.puml
 !else
-  !include C4_Context.puml
+  !include C4_Context_ru.puml
 !endif
 
 ' Scope: A single software system.
@@ -21,8 +21,11 @@
 ' Styling
 ' ##################################
 UpdateSkinparamsAndLegendEntry("container", $CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $CONTAINER_BORDER_COLOR)
+UpdateSkinparamsAndLegendEntry("контейнер", $CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $CONTAINER_BORDER_COLOR)
 UpdateSkinparamsAndLegendEntry("external_container", $EXTERNAL_CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $EXTERNAL_CONTAINER_BORDER_COLOR)
+UpdateSkinparamsAndLegendEntry("внешний_контейнер", $EXTERNAL_CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $EXTERNAL_CONTAINER_BORDER_COLOR)
 UpdateSkinparamsAndLegendEntry("microservice", $CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $CONTAINER_BORDER_COLOR)
+UpdateSkinparamsAndLegendEntry("микросервис", $CONTAINER_BG_COLOR, $ELEMENT_FONT_COLOR, $CONTAINER_BORDER_COLOR)
 
 ' Layout
 ' ##################################
@@ -61,36 +64,36 @@ endlegend
 !endfunction
 
 !unquoted procedure Container($alias, $label, $techn, $descr="", $sprite="", $tags="")
-rectangle "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("container", $tags) as $alias
+rectangle "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("контейнер", $tags) as $alias
 !endprocedure
 
 !unquoted procedure ContainerDb($alias, $label, $techn, $descr="", $sprite="", $tags="")
-database "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("container", $tags) as $alias
+database "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("контейнер", $tags) as $alias
 !endprocedure
 
 !unquoted procedure ContainerQueue($alias, $label, $techn, $descr="", $sprite="", $tags="")
-queue "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("container", $tags) as $alias
+queue "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("контейнер", $tags) as $alias
 !endprocedure
 
 !unquoted procedure Container_Ext($alias, $label, $techn, $descr="", $sprite="", $tags="")
-rectangle "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_container", $tags) as $alias
+rectangle "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("внешний_контейнер", $tags) as $alias
 !endprocedure
 
 !unquoted procedure ContainerDb_Ext($alias, $label, $techn, $descr="", $sprite="", $tags="")
-database "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_container", $tags) as $alias
+database "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("внешний_контейнер", $tags) as $alias
 !endprocedure
 
 !unquoted procedure ContainerQueue_Ext($alias, $label, $techn, $descr="", $sprite="", $tags="")
-queue "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("external_container", $tags) as $alias
+queue "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("внешний_контейнер", $tags) as $alias
 !endprocedure
 
 !unquoted procedure Microservice($alias, $label, $techn, $descr="", $sprite="", $tags="")
-rectangle "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("microservice", $tags) as $alias
+rectangle "$getContainer($label, $techn, $descr, $sprite)$getProps()" $toStereos("микросервис", $tags) as $alias
 !endprocedure
 
 ' Boundaries
 ' ##################################
 
 !unquoted procedure Container_Boundary($alias, $label, $tags="")
-Boundary($alias, $label, "Container", $tags)
+Boundary($alias, $label, "контейнер", $tags)
 !endprocedure
